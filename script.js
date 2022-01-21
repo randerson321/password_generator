@@ -33,6 +33,9 @@ var specialCha = [
 
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 function generatePassword() {
+  var finalArray = []
+  var characters = []
+  var finalPassword = ""
   // Ask them how many they want
   var numCharacters = prompt("How many characters do you want in your password?")
   console.log(numCharacters)
@@ -42,9 +45,33 @@ function generatePassword() {
   var includeSpecial = confirm("Do you want to include special characters?")
   var includeNum  = confirm("Do you want to include numbers?")
   
+  if(includeUppers){
+    characters = characters.concat(upperCase)
+    console.log(characters)
+  }
+  if(includeLowers){
+    characters = characters.concat(lowerCase)
+    console.log(characters)
+  }
+  if(includeSpecial){
+    characters = characters.concat(specialCha)
+    console.log(characters)
+  }
+  if(includeNum){
+    characters = characters.concat(numbers)
+    console.log(characters)
+
+  } 
+  // get as many characters as they ask for out of the array
+  for (let index = 0; index < numCharacters ; index++) {
+     finalPassword += characters[Math.floor(Math.random() * characters.length)];
+    
+  } 
+  console.log(finalPassword)
+  return finalPassword;
 }
 
-// Write password to the #password input
+// Write password to the #password inpu
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
