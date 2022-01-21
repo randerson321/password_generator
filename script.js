@@ -33,12 +33,11 @@ var specialCha = [
 
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 function generatePassword() {
-  var finalArray = []
   var characters = []
   var finalPassword = ""
   // Ask them how many they want
   var numCharacters = prompt("How many characters do you want in your password?")
-  console.log(numCharacters)
+  
   // Ask them if they want uppercase characters
   var includeUppers = confirm("Do you want to include uppercase letters?")
   var includeLowers = confirm("Do you want to include lowercase letters?")
@@ -47,19 +46,19 @@ function generatePassword() {
   
   if(includeUppers){
     characters = characters.concat(upperCase)
-    console.log(characters)
+    
   }
   if(includeLowers){
     characters = characters.concat(lowerCase)
-    console.log(characters)
+   
   }
   if(includeSpecial){
     characters = characters.concat(specialCha)
-    console.log(characters)
+   
   }
   if(includeNum){
     characters = characters.concat(numbers)
-    console.log(characters)
+    
 
   } 
   // get as many characters as they ask for out of the array
